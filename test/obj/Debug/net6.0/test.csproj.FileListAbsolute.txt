@@ -1,0 +1,15 @@
+/Users/eramstedt/Projects/VendingMachine/test/bin/Debug/net6.0/test
+/Users/eramstedt/Projects/VendingMachine/test/bin/Debug/net6.0/test.deps.json
+/Users/eramstedt/Projects/VendingMachine/test/bin/Debug/net6.0/test.runtimeconfig.json
+/Users/eramstedt/Projects/VendingMachine/test/bin/Debug/net6.0/test.dll
+/Users/eramstedt/Projects/VendingMachine/test/bin/Debug/net6.0/ref/test.dll
+/Users/eramstedt/Projects/VendingMachine/test/bin/Debug/net6.0/test.pdb
+/Users/eramstedt/Projects/VendingMachine/test/obj/Debug/net6.0/test.csproj.AssemblyReference.cache
+/Users/eramstedt/Projects/VendingMachine/test/obj/Debug/net6.0/test.GeneratedMSBuildEditorConfig.editorconfig
+/Users/eramstedt/Projects/VendingMachine/test/obj/Debug/net6.0/test.AssemblyInfoInputs.cache
+/Users/eramstedt/Projects/VendingMachine/test/obj/Debug/net6.0/test.AssemblyInfo.cs
+/Users/eramstedt/Projects/VendingMachine/test/obj/Debug/net6.0/test.csproj.CoreCompileInputs.cache
+/Users/eramstedt/Projects/VendingMachine/test/obj/Debug/net6.0/test.dll
+/Users/eramstedt/Projects/VendingMachine/test/obj/Debug/net6.0/ref/test.dll
+/Users/eramstedt/Projects/VendingMachine/test/obj/Debug/net6.0/test.pdb
+/Users/eramstedt/Projects/VendingMachine/test/obj/Debug/net6.0/test.genruntimeconfig.cache

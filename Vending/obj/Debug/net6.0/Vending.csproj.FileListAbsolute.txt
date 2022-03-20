@@ -1,0 +1,15 @@
+/Users/eramstedt/Projects/VendingMachine/Vending/obj/Debug/net6.0/Vending.csproj.AssemblyReference.cache
+/Users/eramstedt/Projects/VendingMachine/Vending/obj/Debug/net6.0/Vending.GeneratedMSBuildEditorConfig.editorconfig
+/Users/eramstedt/Projects/VendingMachine/Vending/obj/Debug/net6.0/Vending.AssemblyInfoInputs.cache
+/Users/eramstedt/Projects/VendingMachine/Vending/obj/Debug/net6.0/Vending.AssemblyInfo.cs
+/Users/eramstedt/Projects/VendingMachine/Vending/obj/Debug/net6.0/Vending.csproj.CoreCompileInputs.cache
+/Users/eramstedt/Projects/VendingMachine/Vending/bin/Debug/net6.0/Vending
+/Users/eramstedt/Projects/VendingMachine/Vending/bin/Debug/net6.0/Vending.deps.json
+/Users/eramstedt/Projects/VendingMachine/Vending/bin/Debug/net6.0/Vending.runtimeconfig.json
+/Users/eramstedt/Projects/VendingMachine/Vending/bin/Debug/net6.0/Vending.dll
+/Users/eramstedt/Projects/VendingMachine/Vending/bin/Debug/net6.0/ref/Vending.dll
+/Users/eramstedt/Projects/VendingMachine/Vending/bin/Debug/net6.0/Vending.pdb
+/Users/eramstedt/Projects/VendingMachine/Vending/obj/Debug/net6.0/Vending.dll
+/Users/eramstedt/Projects/VendingMachine/Vending/obj/Debug/net6.0/ref/Vending.dll
+/Users/eramstedt/Projects/VendingMachine/Vending/obj/Debug/net6.0/Vending.pdb
+/Users/eramstedt/Projects/VendingMachine/Vending/obj/Debug/net6.0/Vending.genruntimeconfig.cache
