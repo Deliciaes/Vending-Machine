@@ -1,12 +1,16 @@
 ﻿public class Snack
     {
-        public string Name { get; }
+        public int  Option { get; set; }
+        public string Name { get; set; }
         public int Price { get; set; }
+        public int Quantity { get; set; }
 
-        public Snack(string name, int price)
+    public Snack(int option, string name, int price, int quantity)
         {
+            Option = option;
             Name = name;
             Price = price;
+            Quantity = quantity;
         }
 
     }

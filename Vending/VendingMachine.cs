@@ -9,7 +9,6 @@ public class VendingMachine
 
     public int balance { get; set; }
 
-    //var snacks = new Snack();
 
     public List<string> Options { get; } = new List<string>
     {
@@ -18,15 +17,12 @@ public class VendingMachine
         "balance",
         "exit"
     };
-    public List<Snack> Snacks { get; } = new List<Snack>
-         {
-             kitkat,
-             snickers,
-             mars,
-             cokeZero
-         };
 
-
+    public List<Snack> snackList = new List<Snack>
+    {
+        new Snack(1, "KitKat", 12, 10),
+        new Snack(2, "hej", 12, 10),
+    };
 
     public void listOptions()
     {
@@ -40,14 +36,16 @@ public class VendingMachine
         }
     }
 
-    public void listSnacks()
+
+
+    public void listSnack()
     {
-        foreach (var snack in snacks)
+        Console.WriteLine("--- Please select by typing corresponding number ---");
+        foreach (var item in snackList)
         {
-            Console.WriteLine($"{snack.Name} | {snack.Price} SEK");
+            Console.WriteLine($"{item.Option}: {item.Name} | {item.Price} SEK");
         }
     }
-
 
 
     //public void showBalance()
@@ -56,16 +54,11 @@ public class VendingMachine
     //    Console.WriteLine();
     //}
 
-    ////public string purchaseSnack()
-    ////{
-
-    ////}
 
     public void Run()
 
-
     {
-        Console.WriteLine("Welcome to Snack Time vending machine!");
+        Console.WriteLine($"Welcome to Snack Time vending machine!");
 
         string option;
 
@@ -79,15 +72,25 @@ public class VendingMachine
             }
             else if (option == "list")
             {
-                listSnacks();
-            }
-            else if (option == "fill")
-            {
-                //Console.WriteLine(kitkat.Name);
+                listSnack();
             }
             else if (option == "help")
             {
                 listOptions();
+            }
+            else if (option == "1")
+            {
+                int number;
+                Int32.TryParse(option, out number);
+
+                var selection = from s in snackList
+                                where s.Option == number
+                                select s;
+                foreach (var item in selection)
+                {
+                    Console.WriteLine($"Thank you for purchasing {item.Name} !");
+                }
+                break;
             }
 
         } while (option != "exit");
@@ -99,14 +102,13 @@ public class VendingMachine
         {
             Console.Write("Please make your selection, or type \"help\" for available options.");
             Console.WriteLine();
-            listSnacks();
-
+            listSnack();
 
             var input = Console.ReadLine()!;
 
-            if (Options.Contains(input))
+            if (Options.Contains(input)|| input == "1"|| input == "2")
             {
-                Console.WriteLine("understood");
+                Console.WriteLine("selection confirmed");
 
                 return input;
             }
@@ -116,6 +118,3 @@ public class VendingMachine
     }
 
 }
-
-
-
