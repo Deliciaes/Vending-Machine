@@ -1,27 +1,24 @@
-﻿//Write a virtual vending machine where the user can buy different items.
-//To buy items they need enough money.
-//The user should be able to see what they have bought, goods available in the machine, and how much money they have.
-//Implement all of this using an object oriented approach where the User, Bank, VendingMachine, Inventory, and so on are objects that interact with each other through some basic user interface.
-
-
-public class VendingMachine
+﻿internal class VendingMachine
 {
-
-    public int balance { get; set; }
-
-
+    public Customer customer;
     public List<string> Options { get; } = new List<string>
     {
         "help",
         "list",
         "balance",
-        "exit"
+        "exit",
+    };
+
+    public List<string> SnackCodes { get; } = new List<string>
+    {
+        "1",
+        "2"
     };
 
     public List<Snack> snackList = new List<Snack>
     {
-        new Snack(1, "KitKat", 12, 10),
-        new Snack(2, "hej", 12, 10),
+        new Snack(1, "KitKat", 12, 0),
+        new Snack(2, "Snickers", 12, 10),
     };
 
     public void listOptions()
@@ -36,24 +33,20 @@ public class VendingMachine
         }
     }
 
-
-
-    public void listSnack()
+    public void listSnacks()
     {
         Console.WriteLine("--- Please select by typing corresponding number ---");
         foreach (var item in snackList)
         {
-            Console.WriteLine($"{item.Option}: {item.Name} | {item.Price} SEK");
+            Console.WriteLine($"{item.Option}: {item.Name} | {item.Price} SEK | {item.Quantity} available.");
         }
     }
 
-
-    //public void showBalance()
-    //{
-    //   // Console.Write($"Your balance is: {customer.Balance}SEK");
-    //    Console.WriteLine();
-    //}
-
+    public void showBalance()
+    {
+        Console.Write($"Your balance is: {customer.Balance} SEK");
+        Console.WriteLine();
+    }
 
     public void Run()
 
@@ -68,17 +61,17 @@ public class VendingMachine
 
             if (option == "balance")
             {
-                //showBalance();
+                showBalance();
             }
             else if (option == "list")
             {
-                listSnack();
+                listSnacks();
             }
             else if (option == "help")
             {
                 listOptions();
             }
-            else if (option == "1")
+            else if (SnackCodes.Contains(option))
             {
                 int number;
                 Int32.TryParse(option, out number);
@@ -88,9 +81,24 @@ public class VendingMachine
                                 select s;
                 foreach (var item in selection)
                 {
-                    Console.WriteLine($"Thank you for purchasing {item.Name} !");
+                    if (item.Quantity == 0)
+                    {
+                        Console.WriteLine("There are none left! Please select a different snack.");
+                    }
+                    else
+                    {
+                        if(customer.Balance >= item.Price)
+                        {
+                            item.Quantity -= 1;
+                            customer.Balance -= item.Price;
+                            Console.WriteLine($"Thank you for purchasing {item.Name}! There are {item.Quantity} left and you have {customer.Balance} SEK left.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("You don't have enough money!!");
+                        }
+                    }
                 }
-                break;
             }
 
         } while (option != "exit");
@@ -102,11 +110,11 @@ public class VendingMachine
         {
             Console.Write("Please make your selection, or type \"help\" for available options.");
             Console.WriteLine();
-            listSnack();
+            listSnacks();
 
             var input = Console.ReadLine()!;
 
-            if (Options.Contains(input)|| input == "1"|| input == "2")
+            if (Options.Contains(input)|| SnackCodes.Contains(input))
             {
                 Console.WriteLine("selection confirmed");
 
@@ -116,5 +124,4 @@ public class VendingMachine
             Console.WriteLine("invalid input.");
         }
     }
-
 }
